@@ -1,0 +1,57 @@
+#include <stdio.h>
+#include <stdlib.h>
+typedef struct Node{
+	long long id;
+	struct Node *next;
+}emp;
+emp *temp;
+ emp *head=NULL;
+void insert(){
+					long long id;
+				printf("Enter the Empoyee ID:------>\n");
+				scanf("%lld",&id);
+				emp* temp;
+				temp=(emp*)malloc(sizeof(emp));
+				if(head==NULL)
+				{
+					head=temp;
+					temp->id=id;
+				}
+				else
+				{
+					temp->id=id;
+					temp->next=head;
+					head=temp;
+				}
+}void print(){
+	printf("List is:\n");
+	emp *temp=head;
+	while(temp!=NULL){
+		printf("ID:-------->%lld\n",temp->id);
+		temp=temp->next;
+	}
+	printf("\n");
+}
+void delete(emp*node)
+{
+	emp*temp=node;
+	if(temp==NULL)
+	{
+		printf("list is deleted recursively\n");
+	}
+	else
+	{
+		printf("%lld\n",temp->id);//in the same order
+		delete(temp->next);
+		//printf("%lld\n",temp->id);//reverse order
+		
+	}
+}
+int main()
+{
+  insert();
+  insert();
+  insert();
+  print();
+  delete(head);
+}
