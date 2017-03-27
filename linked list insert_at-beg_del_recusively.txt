@@ -43,6 +43,7 @@ void delete(emp*node)
 	{
 		delete(temp->next);
 		printf("%lld\n",temp->id);//reverse order
+		free(temp);
 		
 	}
 }
