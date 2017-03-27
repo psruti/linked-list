@@ -44,6 +44,7 @@ void delete(emp*node)
 		printf("%lld\n",temp->id);//in the same order
 		delete(temp->next);
 		//printf("%lld\n",temp->id);//reverse order
+		free(temp);
 		
 	}
 }
