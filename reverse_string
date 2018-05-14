@@ -1,0 +1,25 @@
+//Program to reverse a string with minimal swaping
+#include<stdio.h>
+#include<string.h>
+
+int main()
+{
+
+	char st[20],temp;
+	int i=0,j,n;
+	scanf("%s",st);
+	n=strlen(st);
+	j=n-1;
+	while(i<j)
+	{
+		temp=st[j];
+		st[j]=st[i];
+		st[i]=temp;
+		i++;
+		j--;
+
+
+	}
+	printf("%s",st);
+	return 0;
+}
